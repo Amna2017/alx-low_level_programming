@@ -1,11 +1,13 @@
-#include <stdio.h>
-/**
- * main - prints all single digit numbers of base 10 starting from 0,
- * followed by a new line, using putchar
- * Return: Always 0 (Success)
- */
-int main()
+#include "main.h"
+ #include<unistd.h>
+ /**
+ *_put
+ *the character to print
+ *
+ *REturn :on success 1.
+*on error , -1 is returned.and errno is set appropriately
+*/
+int _putchar(char c)
 {
-printf("_putchar\n");
-return (0);
+  return(write(1,&c,1));
 }
