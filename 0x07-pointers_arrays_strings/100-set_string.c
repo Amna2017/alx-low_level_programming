@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  *
@@ -9,5 +10,5 @@
 
 void set_string(char **s, char *to)
 {
-	*s = to;
+*s = to;
 }
