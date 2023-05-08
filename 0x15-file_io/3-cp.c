@@ -83,7 +83,7 @@ free(buffer);
 exit(98);
 }
 
-w = write(to, buffer, r);
+w = write(to, buffer, rr);
 if (to == -1 || w == -1)
 {
 dprintf(STDERR_FILENO,
