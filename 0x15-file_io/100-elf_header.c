@@ -19,10 +19,7 @@ int index;
 
 for (index = 0; index < 4; index++)
 {
-if (e_ident[index] != 127 &&
-    e_ident[index] != 'E' &&
-    e_ident[index] != 'L' &&
-    e_ident[index] != 'F')
+if (e_ident[index] != 127 && e_ident[index] != 'E' && e_ident[index] != 'L' && e_ident[index] != 'F')
 {
 dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 exit(98);
@@ -114,11 +111,9 @@ printf(" Entry point address: ");
 
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 {
-e_entry = ((e_entry << 8) & 0xFF00FF00) |
-  ((e_entry >> 8) & 0xFF00FF);
+e_entry = ((e_entry << 8) & 0xFF00FF00) | ((e_entry >> 8) & 0xFF00FF);
 e_entry = (e_entry << 16) | (e_entry >> 16);
 }
-
 if (e_ident[EI_CLASS] == ELFCLASS32)
 printf("%#x\n", (unsigned int)e_entry);
 
