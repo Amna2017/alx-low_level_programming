@@ -15,11 +15,12 @@ void close_elf(int elf);
 
 void check_elf(unsigned char *e_ident)
 {
-int index;
+int ix;
 
-for (index = 0; index < 4; index++)
+for (ix = 0; ix < 4; ix++)
 {
-if (e_ident[index] != 127 && e_ident[index] != 'E' && e_ident[index] != 'L' && e_ident[index] != 'F')
+if (e_ident[ix] != 127 && e_ident[ix] != 'E' && e_ident[ix] != 'L' &&
+		e_ident[ix] != 'F')
 {
 dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 exit(98);
@@ -50,6 +51,12 @@ else
 printf(" ");
 }
 }
+
+print_class(unsigned char *e_ident);
+print_data(unsigned char *e_ident);
+print_version(unsigned char *e_ident);
+print_abi(unsigned char *e_ident);
+print_type(unsigned int e_type, unsigned char *e_ident);
 
 /**
 ** print_osabi - Prints the OS/ABI of an ELF header.
