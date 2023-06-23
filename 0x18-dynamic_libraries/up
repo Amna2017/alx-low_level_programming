@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
 git commit -m " mmmm"
-git push
+git push master
