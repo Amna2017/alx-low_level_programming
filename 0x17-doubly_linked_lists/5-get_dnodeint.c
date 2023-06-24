@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - get number of nodes
+ * get_dnodeint_at_index - get node at specific place
  *
  *@head : head node
  *@index : number of nodes
